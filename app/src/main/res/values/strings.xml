@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">RecyclerView24</string>
+    <string name="neme_produck">Neme produck</string>
+    <string name="produck_detell">produck Detell</string>
+    <string name="price">Price</string>
+    <string name="name_product">name_product</string>
+    <string name="product_detail">product_detail</string>
+</resources>
