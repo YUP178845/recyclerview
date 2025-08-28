@@ -12,7 +12,7 @@ import com.soponivtk.recyclerview24.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: AppCompatActivity
+    private lateinit var binding: ActivityMainBinding
 
     private lateinit var recyclerViewAdapter: RecyclerViewAdapter
 
@@ -25,10 +25,6 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
-
-        setContentView(R.layout.activity_main)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -39,11 +35,28 @@ class MainActivity : AppCompatActivity() {
 
         val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this)
 
-        binding.recyclerview.setLayoutManger(LayoutManager)
+        binding.recyclerview.setLayoutManager(layoutManager)
+
+        recyclerViewAdapter = RecyclerViewAdapter(produckList)
+
+        binding.recyclerview.adapter = recyclerViewAdapter
 
     }
 
     private fun loadProduck() {
-        TODO("Not yet implemented")
+        produckList = listOf(
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),
+            ProduckModel("iphone 16","Datail of iphone 16","39,900"),)
     }
 }
